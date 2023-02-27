@@ -50,3 +50,5 @@ n_distinct(listings$neighbourhood_group) #10
 # calendar %>%  filter(id) %>% max(maximum_nights) -> zodat je het max. maximum_nights krijgt
 ```
 
+#hallo dit is een test
+#hallo nieuwe test
