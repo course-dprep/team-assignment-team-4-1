@@ -52,3 +52,5 @@ n_distinct(listings$neighbourhood_group) #10
 
 #hallo dit is een test
 #hallo nieuwe test
+
+#nog een test
