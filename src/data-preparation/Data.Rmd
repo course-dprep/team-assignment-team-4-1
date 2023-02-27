@@ -1,0 +1,52 @@
+---
+title: "Data source"
+output: html_document
+date: "2023-02-27"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Loading and filtering the data
+
+Loading libraries:
+```{r}
+library(readr)
+library(dplyr)
+library(tidyverse)
+```
+
+Loading datasets:
+```{r}
+listings <- read_csv("listings.csv")
+View(listings)
+
+calendar <- read_csv("calendar.csv.gz")
+View(calendar)
+
+reviews <- read_csv("reviews.csv")
+View(reviews)
+
+neighbourhoods <- read_csv("neighbourhoods.csv")
+View(neighbourhoods)
+```
+
+
+'listings'
+* id, host_id, neighbourhood, neigbourhood_group, room_type, price, minimum_nights, number_of_reviews, availability_365
+```{r}
+glimpse(listings)
+n_distinct(listings$neighbourhood) #70
+n_distinct(listings$neighbourhood_group) #10
+```
+
+'calendar'
+* maximum_nights koppelen aan listing_id en als extra column toevoegen bij listings als 'maximum_nights'
+
+```{r}
+# listings %>% mutate(maximum_nights = calendar$maximum_nights -> koppel aan listing_id op 31-12-2022)
+
+# calendar %>%  filter(id) %>% max(maximum_nights) -> zodat je het max. maximum_nights krijgt
+```
+
