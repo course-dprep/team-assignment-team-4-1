@@ -1,3 +1,65 @@
+# There are 6 different data sets available on inside Airbnb for the city Barcelone
+# - calendar.csv
+# - listings.csv
+# - listings-2.csv
+# - reviews.csv
+# - reviews-2.csv
+# - neighbourhoods.csv
+
+#the datasets that are most important for this research purpose are: calendar.csv, listings.csv and listings-2.csv
+
+#relevant columns per dataset are:
+#calendar.csv
+# - id
+# - neighbourhood_group
+# - room_type
+# - minimum_nights
+# - maximum_nigts
+# - price(?)
+
+#listings.csv
+# - id
+# - neighbourhood_group
+# - room_type
+# - minimum_nights
+# - calculated_host_listing_count
+# - neigbourhood
+# - price
+# - number_of_reviews
+# - availability_365
+# _ license 
+
+#listings.csv-2
+# - id
+# - listing_url
+# - neighbourhood
+# - property_type
+# - room_type
+# - accommodates
+# - bathrooms_text
+# - bedrooms
+# - beds
+# - amenities
+# - price
+# - minimum_nights
+# - maximum_nights
+# - number_of_reviews
+# - review_scores_rating
+
+# optional:
+#   - host_response_time
+# - host_response_rate
+# - host_is_superhost
+# - host_listings_count
+# - host_total_listings_count
+# - host_verifications
+# - host_identity_verified
+# - review_scores_cleanliness"                   
+# - review_scores_checkin"                       
+# - review_scores_communication"                 
+# - review_scores_location"                      
+# - review_scores_value" 
+
 #set-up
 library(tidyverse)
 
@@ -51,7 +113,7 @@ listings %>% arrange(price)
 
 ##opening dataset listings-2.csv
 #as compared to listings this dataset listings2 contains more information about what type of accomodation and facilities
-# listings2 <- read_csv('listings-2.csv')
+listings2 <- read_csv('listings-2.csv')
 
 ncol(listings2)
 #75 columns
