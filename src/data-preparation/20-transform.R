@@ -23,11 +23,16 @@ for (i in seq_along(start_indices)) {
 
 # New dataset with only listing_id's > 28
 listings_long <- calendar %>% group_by(listing_id) %>% filter(consecutive_count >= 28)
+
+# New dataset with only listin_id's < 28 
 listings_short <- calendar %>% anti_join(listings_long, by = "listing_id") %>% group_by(listing_id) %>% filter(consecutive_count < 28) 
 
 # Only return unique listing_id's
 listings_long <- unique(listings_long$listing_id)
 listings_short <- unique(listings_short$listing_id)
 
-sum(length(listings_long), length(listings_short))
-length(unique(calendar$listing_id))
+# Check if length of listings_long + listings_short is similar to total listings
+sum(length(listings_long), length(listings_short)) #6898
+length(unique(calendar$listing_id)) #6898
+
+# Format the new lists
