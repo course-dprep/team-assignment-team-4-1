@@ -1,9 +1,8 @@
-# Load datasets into R 
-df1 <- read.csv("./gen/data-preparation/input/dataset1.csv")
-df2 <- read.csv("./gen/data-preparation/input/dataset2.csv")
+## Join the listings tibble with listings_sorted to add the listing_type column
+listings_joined <- listings %>%
+  left_join(listings_sorted, by = c("listing_id" = "id"))
 
-# Merge on id
-df_merged <- merge(df1,df2,by="id")
+## Save dataframe
+# assume listings_sorted is a dataframe
+write.csv(listings_joined, "listings_joined.csv", row.names = FALSE)
 
-# Save merged data
-save(df_merged,file="./gen/data-preparation/temp/data_merged.RData")
