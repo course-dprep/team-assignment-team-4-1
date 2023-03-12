@@ -1,7 +1,7 @@
 library(tidyverse)
 library(dplyr)
 
-calendar <- read_csv("calendar.csv.gz")
+calendar <- read_csv("calendar.csv")
 
 # New column 0-1
 calendar <- calendar %>% mutate(available1 = (as.numeric(!available)))
@@ -41,10 +41,17 @@ listings <- tibble(listing_id = c(listings_long, listings_short),
                    listing_type = c(rep("long", length(listings_long)),
                                     rep("short", length(listings_short))))
 
+## importing listings dataset 
+listings_unsorted <- read_csv("listings-2.csv")
+
+#deleting unimportant columns 
+listings_sorted <- subset(listings_unsorted, select = c(id, name, neighbourhood, property_type, room_type, accommodates, bathrooms_text, bedrooms, beds, amenities, price, minimum_nights, maximum_nights))
+
+
 ## Join the listings tibble with listings_sorted to add the listing_type column
-listings_sorted <- listings_sorted %>%
-  left_join(listings, by = "listing_id")
+listings_joined <- listings %>%
+  left_join(listings_sorted, by = c("listing_id" = "id"))
 
 ## Save dataframe
 # assume listings_sorted is a dataframe
-write.csv(listings_sorted, "listings_sorted.csv", row.names = FALSE)
+write.csv(listings_joined, "listings_joined.csv", row.names = FALSE)
