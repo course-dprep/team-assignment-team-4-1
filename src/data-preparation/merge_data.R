@@ -1,5 +1,5 @@
 ## Join the listings tibble with listings_sorted to add the listing_type column
-listings_joined <- listings %>%
+listings_joined <- listing_type %>%
   left_join(listings_sorted, by = c("listing_id" = "id"))
 
 ## Save dataframe
