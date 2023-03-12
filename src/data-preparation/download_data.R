@@ -1,9 +1,9 @@
 # Download dataset 1
-# dir.create('./data/dataset1')  # Uncomment if need to create directory with R
-download.file('https://rgreminger.github.io/files/dataset1.csv','./data/dataset1/dataset1.csv')
 
-# Download dataset 2
-# dir.create('./data/dataset2')  # Uncomment if need to create directory with R
-download.file('https://rgreminger.github.io/files/dataset2.csv','./data/dataset2/dataset2.csv')
+## Calendar.csv.gz
+download.file('http://data.insideairbnb.com/spain/catalonia/barcelona/2022-12-11/data/calendar.csv.gz', './src/data-preparation/calendar.csv.gz')
+calendar <- read_csv("calendar.csv.gz")
 
-# 
+## Listings.csv
+download.file('http://data.insideairbnb.com/spain/catalonia/barcelona/2022-12-11/data/listings.csv.gz', './src/data-preparation/listings.csv.gz')
+listings_unsorted <- read_csv("listings.csv.gz")
