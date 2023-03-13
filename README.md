@@ -27,11 +27,12 @@ Team-assignment-team-4-1
     │   ├── clean_data
     │   └── update_input.R
     └── paper
-        ├── paper.tex
-        └── tables.R
+    │   ├── paper.tex
+    │   └── tables.R
     └── clean-up.R    
 ├── README.md
 ├── makefile
+├── team_assignment.Rproj
 └── .gitignore
 
 
