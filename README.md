@@ -8,16 +8,31 @@
 
 ### Repository overview
 [Provide an overview of the directory structure and files, for example:]
-├── README.md
+
+Team-assignment-team-4-1
 ├── data
+│   ├── dataset1
+│   ├── dataset2
 ├── gen
 │   ├── analysis
 │   ├── data-preparation
 │   └── paper
 └── src
     ├── analysis
+    │   ├── analyze.R
+    │   └── update_input.R    
     ├── data-preparation
+    │   ├── download_data
+    │   ├── merge_data
+    │   ├── clean_data
+    │   └── update_input.R
     └── paper
+        ├── paper.tex
+        └── tables.R
+    └── clean-up.R    
+├── README.md
+├── makefile
+└── .gitignore
 
 
 ## About
