@@ -1,5 +1,5 @@
-library(tidyverse)
-library(dplyr)
+#load("./gen/data-preparation/src/data-preparation/calendar.csv.gz")
+#load("./gen/data-preparation/src/data-preparation/listings.csv.gz")
 
 # Calendar dataset: creating listings
 ## New column 0-1
@@ -43,7 +43,10 @@ listing_type <- tibble(listing_id = c(listings_long, listings_short),
 ## creating a subset of important columns 
 listings_sorted <- subset(listings_unsorted, select = c(id, name, neighbourhood, property_type, room_type, accommodates, bathrooms_text, bedrooms, beds, amenities, price, minimum_nights, maximum_nights))
 
+
 # Download created csv files
-write.csv(listing_type, "listing_type.csv", row.names = FALSE)
-write.csv(listings_sorted, "listings_sorted.csv", row.names = FALSE)
+write_csv(listing_type, "listing_type.csv", row.names = FALSE)
+write_csv(listings_sorted, "listings_sorted.csv", row.names = FALSE)
+
+
 
