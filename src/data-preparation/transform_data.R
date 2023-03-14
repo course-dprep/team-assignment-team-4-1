@@ -1,6 +1,3 @@
-library(tidyverse)
-library(dplyr)
-
 # Calendar dataset: creating listings
 ## New column 0-1
 calendar <- calendar %>% mutate(available1 = (as.numeric(!available)))
@@ -44,6 +41,6 @@ listing_type <- tibble(listing_id = c(listings_long, listings_short),
 listings_sorted <- subset(listings_unsorted, select = c(id, name, neighbourhood, property_type, room_type, accommodates, bathrooms_text, bedrooms, beds, amenities, price, minimum_nights, maximum_nights))
 
 # Download created csv files
-write.csv(listing_type, "listing_type.csv", row.names = FALSE)
-write.csv(listings_sorted, "listings_sorted.csv", row.names = FALSE)
+write_csv(listing_type, "listing_type.csv", row.names = FALSE)
+write_csv(listings_sorted, "listings_sorted.csv", row.names = FALSE)
 
