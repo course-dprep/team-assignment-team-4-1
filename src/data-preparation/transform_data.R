@@ -49,4 +49,3 @@ write_csv(listing_type, "listing_type.csv", row.names = FALSE)
 write_csv(listings_sorted, "listings_sorted.csv", row.names = FALSE)
 
 
-
